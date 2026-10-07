@@ -131,10 +131,13 @@
       background: #E8F5E9; border: 3px solid #66BB6A;
       border-radius: 20px; padding: 18px; text-align: center; margin: 12px 0; position: relative;
     }
-    .realistic-matcha-photo {
-      width: 120px; height: 120px; object-fit: cover; border-radius: 16px;
-      margin: 8px auto; display: block; box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      border: 2px solid #A5D6A7; background: #fff;
+    .matcha-emoji-box {
+      font-size: 4rem; margin: 10px 0;
+      animation: bounceEmoji 1.5s infinite alternate ease-in-out;
+    }
+    @keyframes bounceEmoji {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(-8px) scale(1.1); }
     }
     .thinking-icon-corner {
       position: absolute; top: 8px; right: 12px; font-size: 1.5rem;
@@ -223,7 +226,7 @@
 
 <div class="container" id="mainContainer">
 
-  <div id="step2" class="step">
+  <div id="step2" class="step active">
     <h2>HAPPY BIRTHDAY KIKIII ✨</h2>
     <div class="scroll-box">
       <div class="animated-baby-icon">👶🍼</div>
@@ -232,7 +235,7 @@
         Tapi, setelah dewasa ternyata malah jadi pawang game yang sok keras yang doyan bikin darah tinggi PADAHAL SAYANYA DARAH RENDAH! becanda ehem.<br><br>
         Bayi gemoy itu namanya adalah ........ Kiki Ahmad Dasuki.
       </p>
-      <button class="btn" id="next-to-m3" style="display:none;" onclick="goToStep('step3-matcha1')">LANJUT KE KUIS MATCHA ➡️</button>
+      <button class="btn" onclick="goToStep('step3-matcha1')">LANJUT KE KUIS MATCHA ➡️</button>
     </div>
   </div>
 
@@ -241,7 +244,7 @@
     <div class="matcha-card">
       <div class="thinking-icon-corner">🤔</div>
       <p style="color:#2E7D32; font-weight:bold; padding-right:25px;">Kenapa air mata itu warnanya bening?</p>
-      <img src="matcha.jpg" class="realistic-matcha-photo" alt="Bubuk Matcha" onerror="this.src='https://images.unsplash.com/photo-1582293041006-25f1618ca63f?q=80&w=400&auto=format&fit=crop'">
+      <div class="matcha-emoji-box">🍵✨</div>
       <button class="btn" style="background:#4CAF50;" onclick="showMatchaAns1()">LIHAT JAWABAN ➡️</button>
       <div id="ans1" style="display:none; margin-top:12px;">
         <p style="color:#1B5E20; font-weight:bold;">Karna kalo warna hijau ya air matcha... xixixixi 🍵😭</p>
@@ -255,7 +258,7 @@
     <div class="matcha-card">
       <div class="thinking-icon-corner">🤨</div>
       <p style="color:#2E7D32; font-weight:bold; padding-right:25px;">Kenapa kalo ngaduk matcha harus pake kayu?</p>
-      <img src="cangkul.jpg" class="realistic-matcha-photo" alt="Cangkul" onerror="this.src='https://images.unsplash.com/photo-1572981779307-38b8cabb2407?q=80&w=400&auto=format&fit=crop'">
+      <div class="matcha-emoji-box">⛏️🪵</div>
       <button class="btn" style="background:#4CAF50;" onclick="showMatchaAns2()">LIHAT JAWABAN ➡️</button>
       <div id="ans2" style="display:none; margin-top:12px;">
         <p style="color:#1B5E20; font-weight:bold;">Karena kalo pake pacul jadinya matchul... xixixixi 😭⛏️</p>
@@ -431,10 +434,6 @@
     if (dub) {
       dub.currentTime = 0;
       dub.play().catch(e => {});
-      setTimeout(() => {
-        const nextBtn = document.getElementById('next-to-m3');
-        if (nextBtn) nextBtn.style.display = 'block';
-      }, 43000);
     }
   }
 
