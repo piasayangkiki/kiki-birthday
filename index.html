@@ -138,18 +138,23 @@
     }
     .btn:active { transform: scale(0.95); }
 
-    /* SLIDE 2: BABY GIF ANIMATION & TYPEWRITER */
+    /* SLIDE 2: ANIMASI BAYI BERGERAK & TYPEWRITER */
     .scroll-box {
       background: var(--creamy-vanilla); border: 3px solid var(--kyoto-red);
-      border-radius: 18px; padding: 18px 14px; margin: 12px 0; text-align: center;
+      border-radius: 18px; padding: 22px 16px; margin: 12px 0; text-align: center;
       box-shadow: inset 0 0 15px rgba(192, 0, 50, 0.1); position: relative;
     }
-    .baby-gif-media {
-      width: 105px; height: 105px; object-fit: cover; border-radius: 50%;
-      border: 3px solid var(--sakura-pink); margin: 0 auto 12px auto; display: block;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15); animation: floatBaby 2s infinite ease-in-out alternate;
+    .animated-baby-icon {
+      width: 75px; height: 75px; background: linear-gradient(135deg, #FF5C8D, #FF85A1);
+      border-radius: 50%; margin: 0 auto 14px auto; display: flex; justify-content: center; align-items: center;
+      font-size: 2.2rem; box-shadow: 0 6px 16px rgba(255, 92, 141, 0.4);
+      animation: floatBabyIcon 1.8s infinite ease-in-out alternate;
+      border: 3px solid #FFF;
     }
-    @keyframes floatBaby { 0% { transform: translateY(0); } 100% { transform: translateY(-6px); } }
+    @keyframes floatBabyIcon {
+      0% { transform: translateY(0) rotate(-6deg) scale(1); }
+      100% { transform: translateY(-8px) rotate(6deg) scale(1.08); }
+    }
 
     /* SLIDE 3: MATCHA JOKES CLEAN */
     .matcha-card {
@@ -272,13 +277,12 @@
 
 <div class="container" id="mainContainer">
 
-  <!-- SLIDE 2: BABY GIF ANIMATION & TYPEWRITER -->
+  <!-- SLIDE 2: ANIMATED BABY ICON & TYPEWRITER STORY -->
   <div id="step2" class="step active">
     <h2>HAPPY BIRTHDAY KIKIII ✨</h2>
     <div class="scroll-box">
-      <!-- Pastikan file gambar GIF bayinya bernama 'bayi.gif' di GitHub kamu -->
-      <img src="bayi.gif" alt="Animasi Bayi" class="baby-gif-media" onerror="this.src='https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=400&auto=format&fit=crop'">
-      <p id="type-scroll" style="font-size:1.02rem; font-weight:bold; color:var(--kyoto-red); margin-bottom:12px; min-height:80px;"></p>
+      <div class="animated-baby-icon">👶🍼</div>
+      <p id="type-scroll" style="font-size:1.05rem; font-weight:bold; color:var(--kyoto-red); margin-bottom:15px; min-height:90px; line-height:1.7;"></p>
       <button class="btn" id="next-to-m3" style="display:none;" onclick="goToStep('step3-matcha1')">LANJUT KE KUIS MATCHA ➡️</button>
     </div>
   </div>
