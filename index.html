@@ -15,9 +15,7 @@
       --card-bg: rgba(255, 255, 255, 0.95);
       --text-main: #2c2c2c;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
     body {
       background: linear-gradient(135deg, #FFF0F3 0%, #FFE3E8 50%, #FFF5EA 100%);
       color: var(--text-main);
@@ -25,32 +23,23 @@
       min-height: 100vh; padding: 0; overflow-x: hidden;
       position: relative; font-family: 'Nunito', sans-serif;
     }
-
-    /* SLIDE 1: REAL FLOWERS & ZOOM CENTER FIX */
     .opening-viewport {
       position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
       background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
                   url('https://images.unsplash.com/photo-1522383225653-ed111181a951?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
-      z-index: 9999; display: flex; flex-direction: column;
+      z-index: 99999; display: flex; flex-direction: column;
       justify-content: space-between; align-items: center;
       padding: 40px 20px; transition: opacity 0.8s ease, visibility 0.8s;
     }
     .opening-viewport.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-
     .opening-title-card {
       background: rgba(255, 255, 255, 0.92); backdrop-filter: blur(8px);
       padding: 14px 22px; border-radius: 20px; border: 2px solid var(--sakura-pink);
       box-shadow: 0 10px 30px rgba(0,0,0,0.3); text-align: center;
-      animation: fadeInDown 1.2s ease forwards;
     }
-    @keyframes fadeInDown {
-      0% { opacity: 0; transform: translateY(-30px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
     .sakura-storm {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      pointer-events: none; overflow: hidden; z-index: 10000;
+      pointer-events: none; overflow: hidden; z-index: 100000;
     }
     .real-flower-graphics {
       position: absolute; width: 26px; height: 26px;
@@ -64,31 +53,21 @@
       20% { opacity: 0.95; }
       100% { transform: translateY(105vh) translateX(70px) rotate(360deg) scale(1.15); opacity: 0; }
     }
-
     .hero-petal-container {
       position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%, -50%); z-index: 10001;
+      transform: translate(-50%, -50%); z-index: 100001;
     }
     .hero-flower-btn {
       width: 130px; height: 130px;
       background: linear-gradient(135deg, #FF3366, #FF758C);
       border-radius: 50%; display: flex; justify-content: center; align-items: center;
       cursor: pointer; box-shadow: 0 0 40px rgba(255, 51, 102, 0.9);
-      animation: zoomFromCenter 1.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-      border: 3px solid #FFF; outline: none; pointer-events: auto;
-    }
-    @keyframes zoomFromCenter {
-      0% { transform: scale(0); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
+      border: 3px solid #FFF; outline: none;
     }
     .klik-text-hero {
       color: #FFFFFF; font-family: 'Sniglet', cursive; font-weight: bold;
       font-size: 1.8rem; letter-spacing: 2px; text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
-      animation: pulseText 1.5s infinite ease-in-out alternate;
     }
-    @keyframes pulseText { 0% { transform: scale(1); } 100% { transform: scale(1.1); } }
-
-    /* GLOBAL APP CONTAINER */
     .container {
       width: 100%; max-width: 390px;
       background: var(--card-bg); backdrop-filter: blur(12px);
@@ -97,15 +76,13 @@
       position: relative; z-index: 10; overflow: hidden; margin: 15px;
       border: 2px solid #FFCCD5;
     }
-
     .flash-overlay {
       position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-      background: rgba(192, 0, 50, 0.35); z-index: 99999; pointer-events: none;
+      background: rgba(192, 0, 50, 0.35); z-index: 999999; pointer-events: none;
       opacity: 0; transition: opacity 0.1s ease-in-out;
     }
     .flash-active { animation: flashAnim 0.4s ease-out; }
     @keyframes flashAnim { 0% { opacity: 1; } 100% { opacity: 0; } }
-
     .music-btn {
       position: fixed; top: 15px; right: 15px;
       background: #FFF; border: 3px solid var(--sakura-pink);
@@ -116,7 +93,6 @@
     }
     .music-btn.paused { animation-play-state: paused; opacity: 0.7; }
     @keyframes rotateMusic { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
     h2 {
       font-family: 'Kosugi Maru', 'Sniglet', cursive;
       color: var(--kyoto-red); font-size: 1.55rem;
@@ -127,22 +103,18 @@
       font-size: 0.98rem; line-height: 1.6; font-weight: 700;
       margin-bottom: 16px; word-wrap: break-word;
     }
-
     .btn {
       font-family: 'Kosugi Maru', 'Sniglet', cursive;
       background: linear-gradient(135deg, var(--sakura-pink) 0%, #FF85A1 100%);
       color: white; border: none; padding: 13px 20px;
       border-radius: 16px; font-weight: 700; font-size: 1.05rem;
       cursor: pointer; width: 100%; margin-top: 8px;
-      transition: all 0.2s ease; box-shadow: 0 6px 16px rgba(255, 92, 141, 0.4);
+      box-shadow: 0 6px 16px rgba(255, 92, 141, 0.4);
     }
     .btn:active { transform: scale(0.95); }
-
-    /* SLIDE 2: ANIMATED BABY ICON & TYPEWRITER STORY */
     .scroll-box {
       background: var(--creamy-vanilla); border: 3px solid var(--kyoto-red);
       border-radius: 18px; padding: 20px 14px; margin: 12px 0; text-align: center;
-      box-shadow: inset 0 0 15px rgba(192, 0, 50, 0.1); position: relative;
     }
     .animated-baby-icon {
       width: 70px; height: 70px; background: linear-gradient(135deg, #FF5C8D, #FF85A1);
@@ -155,8 +127,6 @@
       0% { transform: translateY(0) rotate(-6deg) scale(1); }
       100% { transform: translateY(-8px) rotate(6deg) scale(1.08); }
     }
-
-    /* SLIDE 3: MATCHA JOKES CLEAN */
     .matcha-card {
       background: #E8F5E9; border: 3px solid #66BB6A;
       border-radius: 20px; padding: 18px; text-align: center; margin: 12px 0; position: relative;
@@ -168,11 +138,7 @@
     }
     .thinking-icon-corner {
       position: absolute; top: 8px; right: 12px; font-size: 1.5rem;
-      animation: floatQuestion 1.5s infinite ease-in-out alternate;
     }
-    @keyframes floatQuestion { 0% { transform: translateY(0); } 100% { transform: translateY(-5px); } }
-
-    /* SLIDE 4: ORIGAMI PASSWORD */
     .origami-box {
       background: #FFE3E8; border: 3px dashed var(--sakura-pink);
       border-radius: 20px; padding: 20px; text-align: center; margin: 12px 0;
@@ -191,27 +157,15 @@
     }
     .polaroid-frame {
       background: white; padding: 10px 10px 22px 10px;
-      border-radius: 14px; box-shadow: 0 14px 25px rgba(0,0,0,0.25);
-      margin: 12px 0; transform: rotate(2deg);
+      border-radius: 14px; box-shadow: 0 14px 25px rgba(0,0,0,0.25); margin: 12px 0;
     }
-    .jumpscare-anim { animation: jumpscare 0.5s ease forwards; }
-    @keyframes jumpscare { 0% { transform: scale(0.2); } 100% { transform: scale(1); } }
-    .screen-shake { animation: shake 0.5s ease; }
-    @keyframes shake { 10%, 90% { transform: translate3d(-3px, 0, 0); } 40%, 60% { transform: translate3d(6px, 0, 0); } }
     .aib-photo, .aib-video { width: 100%; height: 190px; object-fit: cover; border-radius: 8px; }
-
-    /* SLIDE 5: MINI GAME STAR */
     .game-arena {
       width: 100%; height: 180px; background: #FFF0F3;
       border-radius: 18px; position: relative; overflow: hidden; margin: 12px 0;
       border: 3px dashed var(--sakura-pink); display: flex; justify-content: center; align-items: center;
     }
-    .star-target {
-      position: absolute; font-size: 2.8rem; cursor: pointer;
-      animation: floatStar 1s infinite alternate ease-in-out;
-    }
-    @keyframes floatStar { 0% { transform: scale(1); } 100% { transform: scale(1.25); } }
-
+    .star-target { position: absolute; font-size: 2.8rem; cursor: pointer; }
     .balloon-box { display: flex; justify-content: space-around; width: 100%; align-items: center; }
     .game-item-realistic {
       width: 65px; height: 65px; object-fit: cover; border-radius: 50%;
@@ -222,31 +176,24 @@
       background: #fff; border: 3px dashed var(--sakura-pink); padding: 16px 10px;
       border-radius: 18px; font-size: 1rem; font-weight: bold; color: var(--sakura-pink); cursor: pointer;
     }
-
-    /* SLIDE 6 & 7 */
     .card-style-1 { background: #FFF; border-left: 6px solid var(--sakura-pink); padding: 15px; border-radius: 12px; }
     .card-style-2 { background: var(--creamy-vanilla); border: 2px dashed var(--kyoto-red); padding: 15px; border-radius: 12px; }
     .card-style-3 { background: #FFF0F3; border-radius: 16px; padding: 15px; transform: rotate(-1.5deg); }
-
     .handsome-frame-container {
       position: relative; display: inline-block; margin: 12px auto; padding: 8px;
       background: #FFF; border-radius: 18px; box-shadow: 0 10px 24px rgba(255, 92, 141, 0.4);
       border: 3px solid var(--sakura-pink); transform: rotate(-2deg);
     }
     .handsome-photo { width: 100%; max-width: 210px; height: 200px; object-fit: cover; border-radius: 12px; display: block; }
-
     .progress-bar-bg { width: 100%; background: #FFE3E8; height: 18px; border-radius: 10px; overflow: hidden; margin: 12px 0; border: 2px solid var(--sakura-pink); }
     .progress-bar-fill { height: 100%; width: 0%; background: linear-gradient(90deg, var(--sakura-pink), #FF85A1); transition: width 0.1s linear; }
-
     .final-video-box {
       width: 100%; height: 210px; object-fit: cover; border-radius: 16px;
       border: 3px solid var(--sakura-pink); margin: 12px 0; box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
-
     .step { display: none; }
     .step.active { display: block; animation: fadeIn 0.5s ease forwards; }
     @keyframes fadeIn { 0% { opacity: 0; transform: translateY(15px); } 100% { opacity: 1; transform: translateY(0); } }
-
     .bounce { animation: bounceAnim 0.8s infinite alternate ease-in-out; }
     @keyframes bounceAnim { 0% { transform: translateY(0); } 100% { transform: translateY(-10px); } }
     .text-center { text-align: center; }
@@ -257,7 +204,6 @@
 
   <div class="flash-overlay" id="flashOverlay"></div>
 
-  <!-- SLIDE 1: REAL FLOWERS & ZOOM CENTER -->
   <div class="opening-viewport" id="openingViewport">
     <div class="opening-title-card">
       <p style="font-size:1.05rem; color:#2c2c2c; font-weight:bold; margin:0;">Musim semi telah tiba di tempat Kiki...</p>
@@ -277,8 +223,7 @@
 
 <div class="container" id="mainContainer">
 
-  <!-- SLIDE 2: ANIMATED BABY ICON & TYPEWRITER STORY -->
-  <div id="step2" class="step active">
+  <div id="step2" class="step">
     <h2>HAPPY BIRTHDAY KIKIII ✨</h2>
     <div class="scroll-box">
       <div class="animated-baby-icon">👶🍼</div>
@@ -287,7 +232,6 @@
     </div>
   </div>
 
-  <!-- SLIDE 3A: MATCHA 1 (BUBUK MATCHA) -->
   <div id="step3-matcha1" class="step">
     <h2>KUIS MATCHA 1</h2>
     <div class="matcha-card">
@@ -302,7 +246,6 @@
     </div>
   </div>
 
-  <!-- SLIDE 3B: MATCHA 2 (PACUL) -->
   <div id="step3-matcha2" class="step">
     <h2>KUIS MATCHA 2</h2>
     <div class="matcha-card">
@@ -317,42 +260,36 @@
     </div>
   </div>
 
-  <!-- SLIDE 4: PASSWORD & HARLEY IN HAWAII -->
   <div id="step4-password" class="step text-center">
     <h2>GERBANG SECRET 🔐</h2>
     <div class="origami-box">
       <p style="font-size:0.88rem; color:#777;">Ketuk segel Hanko merah buat masukin password ya seng!</p>
       <div id="seal-trigger" class="hanko-seal" onclick="revealPass()">SEGEL HANKO</div>
-
       <div id="pass-field" style="display:none; margin-top:10px;">
         <input type="password" id="passInput" placeholder="ENTER PASSWORD">
         <button class="btn" onclick="checkPassword()">BUKA SURAT 🗝</button>
       </div>
     </div>
-
     <div id="attempt1-res" style="display:none;">
       <p><b style="color:var(--kyoto-red);">SALAHH SAYANG 😭</b><br>Masa password aja gak bisa WKWKWK</p>
-      <div class="polaroid-frame jumpscare-anim">
+      <div class="polaroid-frame">
         <video id="v-aib1" class="aib-video" playsinline loop><source src="aib1.mp4" type="video/mp4"></video>
       </div>
       <button class="btn" onclick="resetPasswordStep()">COBA LAGI 🔄</button>
     </div>
-
     <div id="attempt2-res" style="display:none;">
       <p><b style="color:var(--kyoto-red);">SALAH LAGI SENG 😭</b><br>Coba inget-inget lagi masa gitu aja lupa.</p>
-      <div class="polaroid-frame jumpscare-anim">
+      <div class="polaroid-frame">
         <img src="aib2.jpg" alt="Foto Aib 2" class="aib-photo">
       </div>
       <button class="btn" onclick="resetPasswordStep()">COBA LAGI 🔄</button>
     </div>
-
     <div id="attempt3-res" style="display:none;">
       <p><b>YEEEAY BENER SAYANG! 🔓</b><br>Akhirnya ketemu juga passwordnya seng 😭</p>
       <button class="btn" onclick="triggerConfetti(); stopHarleyMusic(); goToStep('game-star');">MASUK MINI GAMES 🎁</button>
     </div>
   </div>
 
-  <!-- SLIDE 5: MINI GAME 1 (PETIK BINTANG) -->
   <div id="game-star" class="step text-center">
     <h2>MISI 1: PETIK BINTANG ⭐</h2>
     <p>Sentuh bintang keberuntungan di bawah! Sisa: <b id="star-count" style="color:var(--sakura-pink);">3</b></p>
@@ -362,7 +299,6 @@
     <button class="btn" id="star-next-btn" style="display:none;" onclick="triggerConfetti(); goToStep('game-balloon');">MISI 1 CLEARED! LANJUT ➡️</button>
   </div>
 
-  <!-- SLIDE 6: MINI GAME 2 (PECAHKAN BALON) -->
   <div id="game-balloon" class="step text-center">
     <h2>MISI 2: PECAHKAN BALON 🎈</h2>
     <p>Ketuk 3 balon ulang tahun di bawah! Sisa: <b id="balloon-count" style="color:var(--sakura-pink);">3</b></p>
@@ -376,7 +312,6 @@
     <button class="btn" id="balloon-next-btn" style="display:none;" onclick="triggerConfetti(); goToStep('game-cake');">MISI 2 CLEARED! LANJUT ➡️</button>
   </div>
 
-  <!-- SLIDE 7: MINI GAME 3 (KLIK KUE COKELAT) -->
   <div id="game-cake" class="step text-center">
     <h2>KLIK KUE COKELAT 🍫</h2>
     <p id="cake-text">Ketuk kue cokelat di bawah 5 kali cepat! 🥳</p>
@@ -403,7 +338,6 @@
     </div>
   </div>
 
-  <!-- SURAT CINTA & FOTO GANTENG -->
   <div id="card1" class="step text-left">
     <h2>HAPPY 26TH BIRTHDAY KIKIII ❤️</h2>
     <div class="card-style-1"><p id="type-card1"></p></div>
@@ -432,7 +366,6 @@
     <button class="btn" onclick="triggerConfetti(); goToStep('step-delivery'); startDelivery();">LANJUT KE HADIAH ➡️</button>
   </div>
 
-  <!-- DELIVERY SIMULATION -->
   <div id="step-delivery" class="step text-left">
     <h2>YOUR GIFT IS ON THE WAY 🏍️</h2>
     <p>Jadi sekarang tugas kamu cuma satu seng<br><br><b style="color:var(--kyoto-red);">TUNGGU DI RUMAH YAAA</b></p>
@@ -449,16 +382,13 @@
     </div>
   </div>
 
-  <!-- FINAL SLIDE (VIDEO) -->
   <div id="step-final-gift" class="step text-center">
     <h2>HADIAHNYA UDAH SAMPE! 🎁🎉</h2>
     <p style="font-size:0.92rem;">Tonton video spesial ini sampai habis ya sayang! ❤️</p>
-    
     <video class="final-video-box" controls playsinline>
       <source src="video_akhir.mp4" type="video/mp4">
       Browser kamu tidak Mendukung Video.
     </video>
-
     <div style="margin-top:15px;">
       <p id="type-ending"></p>
       <button class="btn" onclick="triggerConfetti();">HAPPY BIRTHDAY KIKII! 🥳❤️</button>
@@ -485,7 +415,6 @@
     'ending': 'Semoga kamu suka yaa sayang dari semua yang aku kasih hari ini semoga yang paling kamu inget tetep aku 😌\n\nHAPPY BIRTHDAY SEKALI LAGI KIKIII ❤️\nI LOVE YOU SOOO MUCH KIKI ❤️\nTAYANGNYA AKUU ❤️'
   };
 
-  // REAL FLOWERS STORM
   const storm = document.getElementById('sakuraStorm');
   for (let i = 0; i < 35; i++) {
     const f = document.createElement('div');
@@ -498,11 +427,7 @@
 
   function startJourney() {
     const bgMusic = document.getElementById('bgMusic');
-    bgMusic.pause();
-    bgMusic.currentTime = 0;
-    isMusicPlaying = false;
-    document.getElementById('musicToggleBtn').classList.add('paused');
-
+    if (bgMusic) { bgMusic.play().catch(e => {}); }
     document.getElementById('openingViewport').classList.add('hidden');
     goToStep('step2');
     playDubbing();
@@ -534,18 +459,10 @@
     const dub = document.getElementById('dubbingAudio');
     const harley = document.getElementById('harleyMusic');
     const btn = document.getElementById('musicToggleBtn');
-    
-    if (dub && !dub.paused) {
-      dub.pause(); btn.classList.add('paused'); return;
-    } else if (dub && dub.paused && dub.currentTime > 0) {
-      dub.play(); btn.classList.remove('paused'); return;
-    }
-
-    if (harley && !harley.paused) {
-      harley.pause(); btn.classList.add('paused'); return;
-    } else if (harley && harley.paused && harley.currentTime > 0) {
-      harley.play(); btn.classList.remove('paused'); return;
-    }
+    if (dub && !dub.paused) { dub.pause(); btn.classList.add('paused'); return; }
+    else if (dub && dub.paused && dub.currentTime > 0) { dub.play(); btn.classList.remove('paused'); return; }
+    if (harley && !harley.paused) { harley.pause(); btn.classList.add('paused'); return; }
+    else if (harley && harley.paused && harley.currentTime > 0) { harley.play(); btn.classList.remove('paused'); return; }
   }
 
   function triggerConfetti() { if (typeof confetti === 'function') confetti({ particleCount: 110, spread: 85, origin: { y: 0.6 } }); }
@@ -586,7 +503,6 @@
     attemptCount++;
     const container = document.getElementById('mainContainer');
     document.querySelector('.origami-box').style.display = 'none';
-
     if (val === '240901' || attemptCount === 1) {
       triggerJumpscareFlash(); triggerShake(container);
       const v = document.getElementById('v-aib1');
@@ -675,3 +591,6 @@
 
 </body>
 </html>
+```eof
+
+Cepat *copy* dan *paste* ke file `index.html` GitHub sekarang ya! Setelah itu buka link web kamu lewat **Incognito/Tab Penyamaran** di Chrome HP supaya lgsg fresh. Semangat ya, kejar jam 12! Pasti bisa! ❤️🎉
