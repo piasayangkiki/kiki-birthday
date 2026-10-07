@@ -138,16 +138,16 @@
     }
     .btn:active { transform: scale(0.95); }
 
-    /* SLIDE 2: ANIMASI BAYI BERGERAK & TYPEWRITER */
+    /* SLIDE 2: ANIMATED BABY ICON & TYPEWRITER STORY */
     .scroll-box {
       background: var(--creamy-vanilla); border: 3px solid var(--kyoto-red);
-      border-radius: 18px; padding: 22px 16px; margin: 12px 0; text-align: center;
+      border-radius: 18px; padding: 20px 14px; margin: 12px 0; text-align: center;
       box-shadow: inset 0 0 15px rgba(192, 0, 50, 0.1); position: relative;
     }
     .animated-baby-icon {
-      width: 75px; height: 75px; background: linear-gradient(135deg, #FF5C8D, #FF85A1);
-      border-radius: 50%; margin: 0 auto 14px auto; display: flex; justify-content: center; align-items: center;
-      font-size: 2.2rem; box-shadow: 0 6px 16px rgba(255, 92, 141, 0.4);
+      width: 70px; height: 70px; background: linear-gradient(135deg, #FF5C8D, #FF85A1);
+      border-radius: 50%; margin: 0 auto 10px auto; display: flex; justify-content: center; align-items: center;
+      font-size: 2rem; box-shadow: 0 6px 16px rgba(255, 92, 141, 0.4);
       animation: floatBabyIcon 1.8s infinite ease-in-out alternate;
       border: 3px solid #FFF;
     }
@@ -162,9 +162,9 @@
       border-radius: 20px; padding: 18px; text-align: center; margin: 12px 0; position: relative;
     }
     .realistic-matcha-photo {
-      width: 115px; height: 115px; object-fit: cover; border-radius: 16px;
+      width: 120px; height: 120px; object-fit: cover; border-radius: 16px;
       margin: 8px auto; display: block; box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-      border: 2px solid #A5D6A7;
+      border: 2px solid #A5D6A7; background: #fff;
     }
     .thinking-icon-corner {
       position: absolute; top: 8px; right: 12px; font-size: 1.5rem;
@@ -282,7 +282,7 @@
     <h2>HAPPY BIRTHDAY KIKIII ✨</h2>
     <div class="scroll-box">
       <div class="animated-baby-icon">👶🍼</div>
-      <p id="type-scroll" style="font-size:1.05rem; font-weight:bold; color:var(--kyoto-red); margin-bottom:15px; min-height:90px; line-height:1.7;"></p>
+      <p id="type-scroll" style="font-size:0.95rem; font-weight:bold; color:var(--kyoto-red); margin-bottom:15px; min-height:130px; line-height:1.6; text-align:left;"></p>
       <button class="btn" id="next-to-m3" style="display:none;" onclick="goToStep('step3-matcha1')">LANJUT KE KUIS MATCHA ➡️</button>
     </div>
   </div>
@@ -293,7 +293,7 @@
     <div class="matcha-card">
       <div class="thinking-icon-corner">🤔</div>
       <p style="color:#2E7D32; font-weight:bold; padding-right:25px;">Kenapa air mata itu warnanya bening?</p>
-      <img src="https://images.unsplash.com/photo-1582293041006-25f1618ca63f?q=80&w=400&auto=format&fit=crop" class="realistic-matcha-photo" alt="Bubuk Matcha">
+      <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?q=80&w=400&auto=format&fit=crop" class="realistic-matcha-photo" alt="Bubuk Matcha">
       <button class="btn" style="background:#4CAF50;" onclick="showMatchaAns1()">LIHAT JAWABAN ➡️</button>
       <div id="ans1" style="display:none; margin-top:12px;">
         <p style="color:#1B5E20; font-weight:bold;">Karna kalo warna hijau ya air matcha... xixixixi 🍵😭</p>
@@ -308,7 +308,7 @@
     <div class="matcha-card">
       <div class="thinking-icon-corner">🤨</div>
       <p style="color:#2E7D32; font-weight:bold; padding-right:25px;">Kenapa kalo ngaduk matcha harus pake kayu?</p>
-      <img src="https://images.unsplash.com/photo-1572981779307-38b8cabb2407?q=80&w=400&auto=format&fit=crop" class="realistic-matcha-photo" alt="Pacul">
+      <img src="https://images.unsplash.com/photo-1617897903246-719242758050?q=80&w=400&auto=format&fit=crop" class="realistic-matcha-photo" alt="Pacul">
       <button class="btn" style="background:#4CAF50;" onclick="showMatchaAns2()">LIHAT JAWABAN ➡️</button>
       <div id="ans2" style="display:none; margin-top:12px;">
         <p style="color:#1B5E20; font-weight:bold;">Karena kalo pake pacul jadinya matchul... xixixixi 😭⛏️</p>
@@ -477,7 +477,7 @@
   let typingTimeout = null;
 
   const cardTexts = {
-    'step2': 'A long time ago, tepatnya pada tanggal 8 Oktober 2000... lahirlah seorang bayi laki-laki yang tadinya disangka bakal jadi pangeran kerajaan Jepang. Tapi, setelah dewasa ternyata malah jadi pawang game garis keras yang doyan bikin darah tinggi WKWKWK... Bayi gemoy itu namanya... Kiki Ahmad Dasuki.',
+    'step2': 'A long time ago, tepatnya pada tanggal 8 Oktober 2000... lahirlah seorang bayi laki-laki yang tadinya disangka bakal jadi pangeran kerajaan Jepang.\n\nTapi, setelah dewasa ternyata malah jadi pawang game yang sok keras yang doyan bikin darah tinggi PADAHAL SAYANYA DARAH RENDAH! becanda ehem.\n\nBayi gemoy itu namanya adalah ........ Kiki Ahmad Dasuki.',
     'card1': 'cieeee Kiki Ahmad Dasuki sekarang udah 26 tahun ajaaa 😭\n\nGimana rasanya makin tua seng WKWKWK\n\nTenang aku masih mau kok nemenin kamu walaupun udah 26 😌',
     'card2': 'Makasiii yaa sayang udah hadir di hidup aku dan udah nemenin kamu sampai sejauh ini\n\nMakasiii buat semua hal kecil yang kamu lakuin buat waktu yang kamu kasih dan buat semua cerita yang kita bagi bareng\n\nBahkan ngobrolin hal random pun tetep seru kalau sama kamu 😭',
     'card3': 'Aku mungkin ga selalu bilang atau nunjukinnya dengan cara yang paling jelas tapi aku sayang banget sama kamu beb\n\nI really love having you in my life aku seneng bisa kenal kamu bisa deket sama kamu dan bisa ngelewatin banyak hal bareng kamu❤️',
@@ -606,7 +606,7 @@
     document.getElementById('attempt1-res').style.display = 'none';
     document.getElementById('attempt2-res').style.display = 'none';
     document.querySelector('.origami-box').style.display = 'block';
-    document.getElementById('passInput').value = '';
+    document.getElementById('passInput'].value = '';
   }
 
   function moveStar() {
